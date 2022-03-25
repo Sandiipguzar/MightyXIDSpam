@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://telegra.ph/file/f6ea9ab7683ec1d5f8f57.jpg"width="350"" alt="MightyXSpam Logo">
+  <img src="https://telegra.ph/file/38eae16b57a0c2d039423.jpg"width="350"" alt="MightyXSpam Logo">
 </p>
 <h1 align="center">
   <b>⚠️ 𝘔𝘪𝘨𝘩𝘵𝘺 𝘟 𝘐𝘋 𝘚𝘱𝘢𝘮 ⚠️</b>
@@ -12,7 +12,7 @@
 
 ----
  
-- ➥ ⚡ ғᴀsᴛ ᴀɴᴅ sᴛᴀʙʟᴇ ⚡
+- ➥ ⚡ 𝐅𝐚𝐬𝐭 & 𝐒𝐭𝐚𝐛𝐥𝐞 ⚡
 - ➥ Deploy Upto 40 UserBots in One Time🔥
 - ➥ Dm Spam / Raid
 - ➥ PormSpam 🤓
