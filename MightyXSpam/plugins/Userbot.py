@@ -1,21 +1,23 @@
 # Mighty X Spam - Spam Userbots 
-# @MightyXSpam
-
+# @MightyXSpam | Keep Credits Madafaka !!
+ 
 import os
 import sys
-from MightyXSpam import Mig, Mig2, Mig3, Mig4, Mig5 , Mig6, Mig7, Mig8, Mig9, Mig10, Mig11, Mig12, Mig13, Mig14, Mig15, Mig16, Mig17, Mig18, Mig19, Mig20, Mig21, Mig22, Mig23, Mig24, Mig25, Mig26, Mig27, Mig28, Mig29, Mig30, Mig31, Mig32, Mig33, Mig34, Mig35, Mig36, Mig37, Mig38, Mig39, Mig40, SUDO_USERS
-from MightyXSpam import ALIVE_PIC, mightyversion
+from MightyXSpam import Mig, Mig2, Mig3, Mig4, Mig5 , Mig6, Mig7, Mig8, Mig9, Mig10, Mig11, Mig12, Mig13, Mig14, Mig15, Mig16, Mig17, Mig18, Mig19, Mig20, Mig21, Mig22, Mig23, Mig24, Mig25, Mig26, Mig27, Mig28, Mig29, Mig30, Mig31, Mig32, Mig33, Mig34, Mig35, Mig36, Mig37, Mig38, Mig39, Mig40, SUDO_USERS, OWNER_ID
+from MightyXSpam import ALIVE_PIC, ALIVE_TEXT, mightyversion
 from .. import CMD_HNDLR as hl
 from telethon import events, version
+from telethon.tl.functions.users import GetFullUserRequest
 from time import time
 from datetime import datetime
-
+ 
+ 
 def get_readable_time(seconds: int) -> str:
     count = 0
     ping_time = ""
     time_list = []
     time_suffix_list = ["s", "m", "h", "days"]
-
+ 
     while count < 4:
         count += 1
         if count < 3:
@@ -26,17 +28,17 @@ def get_readable_time(seconds: int) -> str:
             break
         time_list.append(int(result))
         seconds = int(remainder)
-
+ 
     for x in range(len(time_list)):
         time_list[x] = str(time_list[x]) + time_suffix_list[x]
     if len(time_list) == 4:
         ping_time += time_list.pop() + ", "
-
+ 
     time_list.reverse()
     ping_time += ":".join(time_list)
-
+ 
     return ping_time
-
+ 
 @Mig.on(events.NewMessage(incoming=True, pattern=r"\%sping(?: |$)(.*)" % hl))
 @Mig2.on(events.NewMessage(incoming=True, pattern=r"\%sping(?: |$)(.*)" % hl))
 @Mig3.on(events.NewMessage(incoming=True, pattern=r"\%sping(?: |$)(.*)" % hl))
@@ -79,85 +81,82 @@ def get_readable_time(seconds: int) -> str:
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%sping(?: |$)(.*)" % hl))
 async def ping(e):
     if e.sender_id in SUDO_USERS:
-        if e.reply_to_msg_id:
-            fuk = await e.respond("Pᴏɴɢ..!!", reply_to=e.reply_to_msg_id)
-        else:
-            fuk = await e.reply("Pᴏɴɢ..!!")
-        start = datetime.now()
-        end = datetime.now()
-        ms = (end-start).microseconds / 1000
-        pingop = f"█▀█ █▀█ █▄░█ █▀▀\n█▀▀ █▄█ █░▀█ █▄█\n\nϟ Mighty X Spam ϟ︎ `{ms}` ᴍs"                   
-        await fuk.edit(pingop)
-
-
+            start = datetime.now()
+            check = await e.reply("𝙋𝙤𝙣𝙜!")
+            end = datetime.now()
+            ms = (end-start).microseconds / 1000
+            user = await e.client(GetFullUserRequest(e.sender_id))
+            firstname = user.user.first_name
+            userid = user.user.id
+    if userid == OWNER_ID:
+        await check.edit(f"█▀█ █▀█ █▄░█ █▀▀\n█▀▀ █▄█ █░▀█ █▄█\n\n    ⚡ 𝐌𝐢𝐠𝐡𝐭𝐲 𝐗 𝐒𝐩𝐚𝐦 ⚡\n\n𝐏𝐢𝐧𝐠 : `{ms}` ᴍs\n𝐎𝐰𝐧𝐞𝐫 : [{firstname}](tg://user?id={userid})")
+    else:
+        await check.edit(f"█▀█ █▀█ █▄░█ █▀▀\n█▀▀ █▄█ █░▀█ █▄█\n\n    ⚡ 𝐌𝐢𝐠𝐡𝐭𝐲 𝐗 𝐒𝐩𝐚𝐦 ⚡\n\n𝐏𝐢𝐧𝐠 : `{ms}` ᴍs\n𝐒𝐮𝐝𝐨 𝐔𝐬𝐞𝐫 : [{firstname}](tg://user?id={userid})")
+ 
 # ALIVE
-
-MIG_PIC = ALIVE_PIC if ALIVE_PIC else "https://te.legra.ph/file/01bfabe09c4b83fd2feed.jpg"
-
-
-mighty = "✧ 𝗠𝗶𝗴𝗵𝘁𝘆 𝗫 𝗦𝗽𝗮𝗺 𝗶𝘀 𝗛𝗲𝗿𝗲 ✧\n\n"
-
-mighty += f"┏━━━━━━━━━━━━━━━━━━━\n"
-
-mighty += f"┣➣ **ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ** : `3.9.6`\n"
-
-mighty += f"┣➣ **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ** : `{version.__version__}`\n"
-
-mighty += f"┣➣ **ᴍɪɢʜᴛʏXsᴘᴀᴍ ᴠᴇʀsɪᴏɴ**  : `{mightyversion}`\n"
-    
-mighty += f"┣➣ **sᴜᴘᴘᴏʀᴛ** : [JOIN](https://t.me/MightyXSupport)\n"
-
-mighty += f"┣➣ **ᴄʜᴀɴɴᴇʟ** : [JOIN](https://t.me/MightyXUpdates)\n"
-
-mighty += f"┗━━━━━━━━━━━━━━━━━━━\n\n"
-
-mighty += f"✨ [𝐑𝐄𝐏𝐎](https://github.com/BeingMighty/MightyXIDSpam) ✨"            
-                                    
+ 
+MIG_PIC = ALIVE_PIC if ALIVE_PIC else "https://telegra.ph/file/38eae16b57a0c2d039423.jpg"
+ 
+MIG_TEXT = ALIVE_TEXT if ALIVE_TEXT else "╚»★ 𝗠𝗶𝗴𝗵𝘁𝘆𝗫𝗦𝗽𝗮𝗺 𝗶𝘀 𝗛𝗲𝗿𝗲 ★«╝"
+ 
+ 
+ 
+   
 @Mig.on(events.NewMessage(incoming=True, pattern=r"\%salive" % hl))
 async def alive(event):
     if event.sender_id in SUDO_USERS:
-     await Mig.send_file(event.chat_id,
-                                  MIG_PIC,
-                                  caption=mighty)
+        start = datetime.now()
+        text = "𝘊𝘩𝘦𝘤𝘬𝘪𝘯𝘨..."
+        check = await event.reply(text, parse_mode=None, link_preview=None)
+        end = datetime.now()
+        ms = (end-start).microseconds / 1000
+        await check.delete()
+        user = await event.client(GetFullUserRequest(event.sender_id))
+        firstname = user.user.first_name
+        userid = user.user.id
+    if userid == OWNER_ID:
+        await Mig.send_file(event.chat_id, MIG_PIC, caption=f"{MIG_TEXT}\n\n════════════════════\n⚡ 𝐏𝐢𝐧𝐠 : {ms}ᵐˢ\n⚡ 𝐎𝐰𝐧𝐞𝐫 : [{firstname}](tg://user?id={userid})\n⚡ 𝐌𝐢𝐠𝐡𝐭𝐲 𝐗 𝐒𝐩𝐚𝐦 : `{mightyversion}`\n⚡ 𝐏𝐲𝐭𝐡𝐨𝐧 𝐕𝐞𝐫𝐬𝐢𝐨𝐧 : `3.9.6`\n⚡ 𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧 𝐕𝐞𝐫𝐬𝐢𝐨𝐧 : `{version.__version__}`\n⚡ 𝐒𝐮𝐩𝐩𝐨𝐫𝐭 𝐆𝐫𝐨𝐮𝐩 : [𝗝𝗼𝗶𝗻](t.me/MightyXSupport)\n⚡ 𝐔𝐩𝐝𝐚𝐭𝐞𝐬 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 : [𝗝𝗼𝗶𝗻](t.me/MightyXUpdates)\n════════════════════\n\n                  ✨ [𝐑𝐄𝐏𝐎](https://github.com/BeingMighty/MightyXIDSpam) ✨")
+    else:
+        await Mig.send_file(event.chat_id, MIG_PIC, caption=f"{MIG_TEXT}\n\n════════════════════\n⚡ 𝐏𝐢𝐧𝐠 : {ms}ᵐˢ\n⚡ 𝐒𝐮𝐝𝐨 𝐔𝐬𝐞𝐫 : [{firstname}](tg://user?id={userid})\n⚡ 𝐌𝐢𝐠𝐡𝐭𝐲 𝐗 𝐒𝐩𝐚𝐦 : `{mightyversion}`\n⚡ 𝐏𝐲𝐭𝐡𝐨𝐧 𝐕𝐞𝐫𝐬𝐢𝐨𝐧 : `3.9.6`\n⚡ 𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧 𝐕𝐞𝐫𝐬𝐢𝐨𝐧 : `{version.__version__}`\n⚡ 𝐒𝐮𝐩𝐩𝐨𝐫𝐭 𝐆𝐫𝐨𝐮𝐩 : [𝗝𝗼𝗶𝗻](t.me/MightyXSupport)\n⚡ 𝐔𝐩𝐝𝐚𝐭𝐞𝐬 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 : [𝗝𝗼𝗶𝗻](t.me/MightyXUpdates)\n════════════════════\n\n                  ✨ [𝐑𝐄𝐏𝐎](https://github.com/BeingMighty/MightyXIDSpam) ✨")
+                                  
    
    
 # help
-
-HELP_PIC = "https://te.legra.ph/file/01bfabe09c4b83fd2feed.jpg"
-
-MightyX = "🔥 𝗠𝗶𝗴𝗵𝘁𝘆 𝗫 𝗦𝗣𝗔𝗠 🔥\n\n"
+ 
+HELP_PIC = "https://telegra.ph/file/38eae16b57a0c2d039423.jpg"
+ 
+MightyX = "╚»★ 𝗠𝗶𝗴𝗵𝘁𝘆 𝗫 𝗦𝗽𝗮𝗺 𝗛𝗲𝗹𝗽 ★«╝\n\n"
  
 MightyX += f"__ᴄᴍᴅs ᴀᴠᴀɪʟᴀʙʟᴇ ɪɴ ᴍɪɢʜᴛʏ x sᴘᴀᴍ__\n\n"
-
-MightyX += f" ↧ 𝚄𝚂𝙴𝚁𝙱𝙾𝚃 𝙲𝙼𝙳𝚂 ↧\n\n"
-
-MightyX += f" `.ping` - `.alive` - `.setpic` - `.delpic` - `.setname` - `.setbio` - `.inviteall` - .`restart` - `.update` - `.stats` - `.addsudo` \n\n"
  
-MightyX += f" ↧ 𝙹𝙾𝙸𝙽/𝙻𝙴𝙰𝚅𝙴 𝙲𝙼𝙳𝚂 ↧\n\n"
-
-MightyX += f" `.join` - `.pjoin` - `.leave`\n\n"
+MightyX += f"𝙐𝙨𝙚𝙧𝘽𝙤𝙩 𝘾𝙢𝙙𝙨\n\n"
  
-MightyX += f" ↧ 𝚂𝙿𝙰𝙼 / 𝚁𝙰𝙸𝙳 𝙲𝙼𝙳𝚂 ↧\n\n"
-
-MightyX += f" `.raid` - `.replyraid` - `.dreplyraid` - `.delayraid` \n\n `.spam` - `.bigspam` - `.delayspam` - `.abuse` \n\n"
-
-MightyX += f" 𝙳𝙼 / 𝙴𝚌𝚑𝚘 𝙲𝚖𝚍𝚜 \n\n"
-
-MightyX += f" `.dm` - `.dmraid` - `.dmspam` \n\n `.addecho` - `.rmecho` \n\n"
-
-MightyX += f"All Cmds Uploaded : [• HERE •](https://t.me/ResourceXD/2) \n\n"
+MightyX += f" `{hl}ping` - `{hl}alive` - `{hl}setpic` - `{hl}delpic` - `{hl}setname` - `{hl}setbio` - `{hl}inviteall` - `{hl}restart` - `{hl}update` - `{hl}stats` - `{hl}addsudo` \n\n"
  
-MightyX += f"@MightyXUpdates | @MightyXSupport\n"
-
-
+MightyX += f"𝙅𝙤𝙞𝙣/𝙇𝙚𝙖𝙫𝙚 𝘾𝙢𝙙𝙨\n\n"
+ 
+MightyX += f" `{hl}join` - `{hl}pjoin` - `{hl}leave`\n\n"
+ 
+MightyX += f"𝙎𝙥𝙖𝙢/𝙍𝙖𝙞𝙙 𝘾𝙢𝙙𝙨\n\n"
+ 
+MightyX += f" `{hl}spam` - `{hl}bigspam` - `{hl}delayspam` - `{hl}abuse` \n\n `{hl}raid` - `{hl}replyraid` - `{hl}dreplyraid` - `{hl}delayraid` \n\n"
+ 
+MightyX += f"𝘿𝙈/𝙀𝙘𝙝𝙤 𝘾𝙢𝙙𝙨\n\n"
+ 
+MightyX += f" `{hl}dm` - `{hl}dmraid` - `{hl}dmspam` \n\n `{hl}addecho` - `{hl}rmecho` \n"
+ 
+MightyX += f"\n**☞** [𝘒𝘯𝘰𝘸 𝘔𝘰𝘳𝘦 𝘈𝘣𝘰𝘶𝘵 𝘛𝘩𝘦𝘴𝘦 𝘊𝘔𝘋𝘚](t.me/ResourceXD/2)\n\n"
+ 
+MightyX += f"[✨ Updates ✨](t.me/MightyXUpdates)        [✨ Support ✨](t.me/MightyXSupport)\n"
+ 
 @Mig.on(events.NewMessage(incoming=True, pattern=r"\%shelp(?: |$)(.*)" % hl))
 async def help(event):
     if event.sender_id in SUDO_USERS:
      await Mig.send_file(event.chat_id,
                                   HELP_PIC,
                                   caption=MightyX)                                                         
-
-
+ 
+ 
 @Mig.on(events.NewMessage(incoming=True, pattern=r"\%srestart(?: |$)(.*)" % hl))
 @Mig2.on(events.NewMessage(incoming=True, pattern=r"\%srestart(?: |$)(.*)" % hl))
 @Mig3.on(events.NewMessage(incoming=True, pattern=r"\%srestart(?: |$)(.*)" % hl))
@@ -200,7 +199,7 @@ async def help(event):
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%srestart(?: |$)(.*)" % hl))
 async def restart(e):
     if e.sender_id in SUDO_USERS:
-        text = "𝙍𝙀𝙎𝙏𝘼𝙍𝙏𝙄𝙉𝙂..!\n\nPlease Wait For Few Seconds !!"
+        text = "𝗥𝗲𝘀𝘁𝗮𝗿𝘁𝗶𝗻𝗴 𝗬𝗼𝘂𝗿 𝗠𝗶𝗴𝗵𝘁𝘆𝗫𝗦𝗽𝗮𝗺...\n\nPlease Wait For Few Seconds !!"
         await e.reply(text, parse_mode=None, link_preview=None)
         try:
             await Mig.disconnect()
@@ -362,6 +361,7 @@ async def restart(e):
             await Mig40.disconnect()
         except Exception:
             pass
-
+ 
         os.execl(sys.executable, sys.executable, *sys.argv)
         quit()
+ 
