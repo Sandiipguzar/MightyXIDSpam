@@ -1,5 +1,5 @@
-# MightyXSpam - Spam Userbots
-# Copyright © 2021 @RiZoeLX
+# Mighty X Spam - Spam Userbots
+# @MightyXSpam | @MightyXSupport
 
 import os
 import sys
@@ -21,12 +21,13 @@ logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s'
 
 #version
 
-mightyversion = "v2.0.1"
+mightyversion = "v2.0.5"
 
 #values
 API_ID = config("API_ID", default=None, cast=int)
 API_HASH = config("API_HASH", default=None)
 ALIVE_PIC = config("ALIVE_PIC", default=None)
+ALIVE_TEXT = config("ALIVE_TEXT", default=None)
 CMD_HNDLR = getenv("CMD_HNDLR", default=".")
 HEROKU_APP_NAME = config("HEROKU_APP_NAME", None)
 HEROKU_API_KEY = config("HEROKU_API_KEY", None)
