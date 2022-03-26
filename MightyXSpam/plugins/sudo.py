@@ -17,12 +17,12 @@ sudousers = os.environ.get("SUDO_USERS", None)
 @Mig.on(events.NewMessage(incoming=True, pattern=r"\%saddsudo(?: |$)(.*)" % hl))
 async def tb(event):
     if event.sender_id in DEV:
-        ok = await event.reply("Adding user as a sudo...")
+        ok = await event.reply("Adding User As Sudo...")
         mighty = "SUDO_USER"
         if HEROKU_APP_NAME is not None:
             app = Heroku.app(HEROKU_APP_NAME)
         else:
-            await ok.edit("`[HEROKU]:" "\nPlease setup your` **HEROKU_APP_NAME**")
+            await ok.edit("`[HEROKU]:" "\nPlease Setup Your` **HEROKU_APP_NAME**")
             return
         heroku_var = app.config()
         if event is None:
@@ -30,12 +30,12 @@ async def tb(event):
         try:
             target = await get_user(event)
         except Exception:
-            await ok.edit(f"Reply to a user.")
+            await ok.edit(f"Reply To a User.")
         if sudousers:
             newsudo = f"{sudousers} {target}"
         else:
             newsudo = f"{target}"
-        await ok.edit(f"**Added `{target}` ** as a sudo user, Restarting... Please Wait For Few Seconds...")
+        await ok.edit(f"**Added `{target}` As Sudo User.**\n Restarting... Please Wait For Few Seconds...")
         heroku_var[mighty] = newsudo
 
         
