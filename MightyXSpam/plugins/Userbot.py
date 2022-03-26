@@ -4,13 +4,14 @@
 import os
 import sys
 from MightyXSpam import Mig, Mig2, Mig3, Mig4, Mig5 , Mig6, Mig7, Mig8, Mig9, Mig10, Mig11, Mig12, Mig13, Mig14, Mig15, Mig16, Mig17, Mig18, Mig19, Mig20, Mig21, Mig22, Mig23, Mig24, Mig25, Mig26, Mig27, Mig28, Mig29, Mig30, Mig31, Mig32, Mig33, Mig34, Mig35, Mig36, Mig37, Mig38, Mig39, Mig40, SUDO_USERS, OWNER_ID
-from MightyXSpam import ALIVE_PIC, ALIVE_TEXT, mightyversion
+from MightyXSpam import ALIVE _NAME, ALIVE_PIC, ALIVE_TEXT, mightyversion
 from .. import CMD_HNDLR as hl
 from telethon import events, version
 from telethon.tl.functions.users import GetFullUserRequest
 from time import time
 from datetime import datetime
  
+mention = f"[{ALIVE_NAME}](tg://user?id={OWNER_ID})"
  
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -111,15 +112,9 @@ async def alive(event):
         end = datetime.now()
         ms = (end-start).microseconds / 1000
         await check.delete()
-        user = await event.client(GetFullUserRequest(event.sender_id))
-        firstname = user.user.first_name
-        userid = user.user.id
-    if userid == OWNER_ID:
-        await Mig.send_file(event.chat_id, MIG_PIC, caption=f"{MIG_TEXT}\n\n════════════════════\n⚡ 𝐏𝐢𝐧𝐠 : {ms}ᵐˢ\n⚡ 𝐎𝐰𝐧𝐞𝐫 : [{firstname}](tg://user?id={userid})\n⚡ 𝐌𝐢𝐠𝐡𝐭𝐲 𝐗 𝐒𝐩𝐚𝐦 : `{mightyversion}`\n⚡ 𝐏𝐲𝐭𝐡𝐨𝐧 𝐕𝐞𝐫𝐬𝐢𝐨𝐧 : `3.9.6`\n⚡ 𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧 𝐕𝐞𝐫𝐬𝐢𝐨𝐧 : `{version.__version__}`\n⚡ 𝐒𝐮𝐩𝐩𝐨𝐫𝐭 𝐆𝐫𝐨𝐮𝐩 : [𝗝𝗼𝗶𝗻](t.me/MightyXSupport)\n⚡ 𝐔𝐩𝐝𝐚𝐭𝐞𝐬 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 : [𝗝𝗼𝗶𝗻](t.me/MightyXUpdates)\n════════════════════\n\n                  ✨ [𝐑𝐄𝐏𝐎](https://github.com/BeingMighty/MightyXIDSpam) ✨")
-    else:
-        await Mig.send_file(event.chat_id, MIG_PIC, caption=f"{MIG_TEXT}\n\n════════════════════\n⚡ 𝐏𝐢𝐧𝐠 : {ms}ᵐˢ\n⚡ 𝐒𝐮𝐝𝐨 𝐔𝐬𝐞𝐫 : [{firstname}](tg://user?id={userid})\n⚡ 𝐌𝐢𝐠𝐡𝐭𝐲 𝐗 𝐒𝐩𝐚𝐦 : `{mightyversion}`\n⚡ 𝐏𝐲𝐭𝐡𝐨𝐧 𝐕𝐞𝐫𝐬𝐢𝐨𝐧 : `3.9.6`\n⚡ 𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧 𝐕𝐞𝐫𝐬𝐢𝐨𝐧 : `{version.__version__}`\n⚡ 𝐒𝐮𝐩𝐩𝐨𝐫𝐭 𝐆𝐫𝐨𝐮𝐩 : [𝗝𝗼𝗶𝗻](t.me/MightyXSupport)\n⚡ 𝐔𝐩𝐝𝐚𝐭𝐞𝐬 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 : [𝗝𝗼𝗶𝗻](t.me/MightyXUpdates)\n════════════════════\n\n                  ✨ [𝐑𝐄𝐏𝐎](https://github.com/BeingMighty/MightyXIDSpam) ✨")
-                                  
-   
+        await Mig.send_file(event.chat_id, MIG_PIC, caption=f"{MIG_TEXT}\n\n════════════════════\n⚡ 𝐏𝐢𝐧𝐠 : {ms}ᵐˢ\n⚡ 𝐎𝐰𝐧𝐞𝐫 : {mention}\n⚡ 𝐌𝐢𝐠𝐡𝐭𝐲 𝐗 𝐒𝐩𝐚𝐦 : `{mightyversion}`\n⚡ 𝐏𝐲𝐭𝐡𝐨𝐧 𝐕𝐞𝐫𝐬𝐢𝐨𝐧 : `3.9.6`\n⚡ 𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧 𝐕𝐞𝐫𝐬𝐢𝐨𝐧 : `{version.__version__}`\n⚡ 𝐒𝐮𝐩𝐩𝐨𝐫𝐭 𝐆𝐫𝐨𝐮𝐩 : [𝗝𝗼𝗶𝗻](t.me/MightyXSupport)\n⚡ 𝐔𝐩𝐝𝐚𝐭𝐞𝐬 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 : [𝗝𝗼𝗶𝗻](t.me/MightyXUpdates)\n════════════════════\n\n                  ✨ [𝐑𝐄𝐏𝐎](https://github.com/BeingMighty/MightyXIDSpam) ✨")
+        
+        
    
 # help
  
@@ -145,9 +140,9 @@ MightyX += f"𝘿𝙈/𝙀𝙘𝙝𝙤 𝘾𝙢𝙙𝙨\n\n"
  
 MightyX += f" `{hl}dm` - `{hl}dmraid` - `{hl}dmspam` \n\n `{hl}addecho` - `{hl}rmecho` \n"
  
-MightyX += f"\n**☞** [𝘒𝘯𝘰𝘸 𝘔𝘰𝘳𝘦 𝘈𝘣𝘰𝘶𝘵 𝘛𝘩𝘦𝘴𝘦 𝘊𝘔𝘋𝘚](t.me/ResourceXD/2)\n\n"
+MightyX += f"\n[𝘒𝘯𝘰𝘸 𝘔𝘰𝘳𝘦 𝘈𝘣𝘰𝘶𝘵 𝘛𝘩𝘦𝘴𝘦 𝘊𝘔𝘋𝘚](t.me/ResourceXD/2)\n\n"
  
-MightyX += f"[✨ Updates ✨](t.me/MightyXUpdates)        [✨ Support ✨](t.me/MightyXSupport)\n"
+MightyX += f"[✨ Updates ✨](t.me/MightyXUpdates)       [✨ Support ✨](t.me/MightyXSupport)\n"
  
 @Mig.on(events.NewMessage(incoming=True, pattern=r"\%shelp(?: |$)(.*)" % hl))
 async def help(event):
