@@ -1,3 +1,8 @@
+# By - LΣGΣΠD | @Hey_LEGEND
+# For MightyXSpam | @MightyXSpam
+# From Kangers Import Madafaka
+#Keep Credits Madafaka !!
+
 import os
 import sys
 import random
@@ -108,31 +113,26 @@ def user_full_name(user):
 async def get_users(event):
     usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗜𝗻𝘃𝗶𝘁𝗲𝗔𝗹𝗹\n\nCommand:\n\n.inviteall <group username/id/link>"
     if event.sender_id in DEV:
-        Nobi = event.text[11:]
-        Mighty = Nobi.lower()
-        migx = await event.reply("__Processing...__🌚")
-        if Mighty in restricted:
-            await migx.edit("You Can't Invite Members From There !!")
-            await event.client.send_message(-1001644444780, "Sorry For Inviting Members From Here.")
-            return
-        mightyxspam = await get_chatinfo(event)
-        chat = await event.get_chat()
-        if event.is_private:
-            return await migx.edit("`Sorry, Can't Add Users Here !!`")
-        s = 0
-        f = 0
-        error = "None"
-        await migx.edit("**Terminal Status**\n\n`Collecting Users..!! ✨`")
-        async for user in event.client.iter_participants(mightyxspam.full_chat.id):
-            try:
-                await event.client(
-                    InviteToChannelRequest(channel=chat, users=[user.id])
-                )
-                s += 1
-                await migx.edit(f"**Terminal Running...**\n\n🎉 Invited `{s}` People \n⚠️ Failed To Invite `{f}` People\n\n**‼️LastError :** `{error}`")
-            except Exception as e:
-                error = str(e)
-                f += 1
-        return await migx.edit(f"**Terminal Finished** \n\n✨ Successfully Invited `{s}` People \n❌ Failed To Invite `{f}` People")
- 
+        sender = await event.get_sender() ; me = await event.client.get_me()
+    if not sender.id == me.id:
+        legend = await event.reply("__Processing... 🌚__")
+    else:
+    	legend = await event.edit("__Processing... 🌚__")
+    legendop = await get_chatinfo(event) ; chat = await event.get_chat()
+    if event.is_private:
+              return await legend.edit("`Sorry, Can't Add Users Here..!`")    
+    s = 0 ; f = 0 ; error = 'None'   
+  
+    await legend.edit("⚡ 𝐌𝐢𝐠𝐡𝐭𝐲 𝐗 𝐒𝐩𝐚𝐦 ⚡\n\n🔥 **Terminal Status** 🔥\n\n`Collecting Users..!! ✨`")
+    async for user in event.client.iter_participants(legendop.full_chat.id):
+                try:
+                    if error.startswith("Too"):
+                        return await legend.edit(f"**Terminal Finished With Error :**\n(`May Got Limit Error From Telethon Please Try Again Later`)\n**Error** : \n`{error}`\n\n🎉 Invited `{s}` People \n⚠️ Failed To Invite `{f}` People")
+                    await event.client(functions.channels.InviteToChannelRequest(channel=chat,users=[user.id]))
+                    s = s + 1                                                    
+                    await legend.edit(f"⚡ 𝐌𝐢𝐠𝐡𝐭𝐲 𝐗 𝐒𝐩𝐚𝐦 ⚡\n\n🔥 **Terminal Running...** 🔥\n\n🎉 Invited `{s}` People \n⚠️ Failed To Invite `{f}` People\n\n**‼️LastError :** `{error}`")                
+                except Exception as e:
+                    error = str(e) ; f = f + 1             
+    return await legend.edit(f"⚡ 𝐌𝐢𝐠𝐡𝐭𝐲 𝐗 𝐒𝐩𝐚𝐦 ⚡\n\n🔥 **Terminal Finished** 🔥\n\n✨ Successfully Invited `{s}` People \n❌ Failed To Invite `{f}` People")
+    
  
