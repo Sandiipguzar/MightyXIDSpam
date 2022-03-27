@@ -4,7 +4,7 @@
 import os
 import sys
 from MightyXSpam import Mig, Mig2, Mig3, Mig4, Mig5 , Mig6, Mig7, Mig8, Mig9, Mig10, Mig11, Mig12, Mig13, Mig14, Mig15, Mig16, Mig17, Mig18, Mig19, Mig20, Mig21, Mig22, Mig23, Mig24, Mig25, Mig26, Mig27, Mig28, Mig29, Mig30, Mig31, Mig32, Mig33, Mig34, Mig35, Mig36, Mig37, Mig38, Mig39, Mig40, SUDO_USERS, OWNER_ID
-from MightyXSpam import ALIVE _NAME, ALIVE_PIC, ALIVE_TEXT, mightyversion
+from MightyXSpam import ALIVE_NAME, ALIVE_PIC, ALIVE_TEXT, mightyversion
 from .. import CMD_HNDLR as hl
 from telethon import events, version
 from telethon.tl.functions.users import GetFullUserRequest
