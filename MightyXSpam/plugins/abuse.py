@@ -50,7 +50,7 @@ from .. import CMD_HNDLR as hl
 @Mig39.on(events.NewMessage(incoming=True, pattern=r"\%sabuse(?: |$)(.*)" % hl))
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%sabuse(?: |$)(.*)" % hl))
 async def _(e):
-    usage = "**Module Name = Abuse**\n\nCommand:\n\n .gali <Username of User>\n\nit will continuously abuse until you restart!!."
+    usage = "**Module Name = Abuse**\n\nCommand:\n\n .abuse <Username of User>\n\nit will continuously abuse until you restart!!."
     if e.sender_id in SUDO_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage, parse_mode=None, link_preview=None )
