@@ -1,7 +1,7 @@
 # By - LΣGΣΠD | @Hey_LEGEND
 # For MightyXSpam | @MightyXSpam
 # From Kangers Import Madafaka
-#Keep Credits Madafaka !!
+# Keep Credits Madafaka !!
 
 import os
 import sys
@@ -127,7 +127,8 @@ async def get_users(event):
     async for user in event.client.iter_participants(legendop.full_chat.id):
                 try:
                     if error.startswith("Too"):
-                        return await legend.edit(f"**Terminal Finished With Error :**\n(`May Got Limit Error From Telethon Please Try Again Later`)\n**Error** : \n`{error}`\n\n🎉 Invited `{s}` People \n⚠️ Failed To Invite `{f}` People")
+                        return await legend.edit(f"⚡ 𝐌𝐢𝐠𝐡𝐭𝐲 𝐗 𝐒𝐩𝐚𝐦 ⚡\n\n**Terminal Finished With Error :**\n(`May Got Limit Error From Telethon Please Try Again Later`)\n**Error** : \n`{error}`\n\n🎉 Invited `{s}` People \n⚠️ Failed To Invite `{f}` People")
+                    await asyncio.sleep(5)
                     await event.client(functions.channels.InviteToChannelRequest(channel=chat,users=[user.id]))
                     s = s + 1                                                    
                     await legend.edit(f"⚡ 𝐌𝐢𝐠𝐡𝐭𝐲 𝐗 𝐒𝐩𝐚𝐦 ⚡\n\n🔥 **Terminal Running...** 🔥\n\n🎉 Invited `{s}` People \n⚠️ Failed To Invite `{f}` People\n\n**‼️LastError :** `{error}`")                
