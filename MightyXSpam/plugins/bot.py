@@ -65,16 +65,16 @@ from telethon.tl.types import Channel, Chat, InputPhoto, User
 @Mig39.on(events.NewMessage(incoming=True, pattern=r"\%ssetname(?: |$)(.*)" % hl))
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%ssetname(?: |$)(.*)" % hl))
 async def name(e):
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗖𝗛𝗔𝗡𝗚𝗘 𝗡𝗔𝗠𝗘\n\nCommand:\n\n.setname <Message to change name of spam ids>"
+    usage = f"**MODULE NAME : SET NAME**\n\nCommand :\n\n{hl}setname <name>\n\nNote : name should be under 64 characters"
     if e.sender_id in DEV:
         names = e.text.split(" ", 1)
         Mighty = names[1]
         if len(e.text) > 5:
             firstname = Mighty
-            text = "Changing Name..."
+            text = "__Changing Name...__"
             try:
                 await e.client(functions.account.UpdateProfileRequest(first_name=firstname))
-                event = await e.reply(text, parse_mode=None, link_preview=None )
+                event = await e.reply(text)
                 await event.edit("Changed Name Successfully !! ✅")
             except Exception as e:
                 await print(str(e))   
@@ -124,16 +124,16 @@ async def name(e):
 @Mig39.on(events.NewMessage(incoming=True, pattern=r"\%ssetbio(?: |$)(.*)" % hl))
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%ssetbio(?: |$)(.*)" % hl))
 async def _(e):
-    usage = f"𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗖𝗛𝗔𝗡𝗚𝗘 𝗕𝗜𝗢\n\nCommand:\n\n.setbio <Message to change name of spam ids>"
+    usage = f"**MODULE NAME : SET BIO**\n\nCommand :\n\n.setbio <Text>\n\nNote : bio should be under 70 characters"
     if e.sender_id in DEV:
         fukyou = e.text.split(" ", 1)
         message = fukyou[1]
         if len(e.text) > 5:
             bio = message
-            text = "Changing Bio..."
+            text = "__Changing Bio...__"
             try:
                 await e.client(functions.account.UpdateProfileRequest(about=bio))
-                event = await e.reply(text, parse_mode=None, link_preview=None )
+                event = await e.reply(text)
                 await asyncio.sleep(0.7)
                 await event.edit("Changed Bio Successfully !! ✅")
             except Exception as e:
@@ -265,7 +265,7 @@ async def stats(event):
 @Mig39.on(events.NewMessage(incoming=True, pattern=r"\%ssetpic(?: |$)(.*)" % hl))
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%ssetpic(?: |$)(.*)" % hl))
 async def pfp(event):
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗖𝗛𝗔𝗡𝗚𝗘 𝗣𝗜𝗖\n\nCommand:\n\n.setpic <reply to media> to change pfp of spam ids>"
+    usage = f"**MODULE NAME : SET PIC**\n\nCommand :\n\n{hl}setpic <reply to media>\n\ninfo : To change pfp of spam ids"
     reply_message = await event.get_reply_message()
     event = await event.respond("`Downloading Media...`")
     photo = None
@@ -348,7 +348,7 @@ async def pfp(event):
 @Mig39.on(events.NewMessage(incoming=True, pattern=r"\%sdelpic(?: |$)(.*)" % hl))
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%sdelpic(?: |$)(.*)" % hl))
 async def remove_profilepic(delpfp):
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗗𝗘𝗟𝗘𝗧𝗘 𝗣𝗜𝗖\n\nCommand:\n\n.delpic <number/all> to delete pfp of spam ids>"
+    usage = f"**MODULE NAME : DEL PIC**\n\nCommand :\n\n.delpic <count/all> to delete pfp(s) of spam ids>"
     botme = await delpfp.client.get_me()
     botid = telethon.utils.get_peer_id(botme) 
     group = delpfp.text[8:]
