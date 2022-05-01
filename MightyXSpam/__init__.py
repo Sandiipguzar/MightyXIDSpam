@@ -20,9 +20,6 @@ from telethon.tl.functions.messages import ImportChatInviteRequest
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
                     level=logging.WARNING)
 
-# owner mention
-mention = f"[{ALIVE_NAME}](tg://user?id={OWNER_ID})"
-
 #version
 
 mightyversion = "v2.0.6"
@@ -80,6 +77,9 @@ SUDO_USERS = list(map(int, getenv("SUDO_USER").split()))
 if 1517994352 not in SUDO_USERS:
     SUDO_USERS.append(1517994352)
 OWNER_ID = int(os.environ.get("OWNER_ID", None))
+
+# owner mention
+mention = f"[{ALIVE_NAME}](tg://user?id={OWNER_ID})"
 
 # Don't Mess with Codes !! 
 DEV = list(map(int, getenv("FULLSUDO").split()))
