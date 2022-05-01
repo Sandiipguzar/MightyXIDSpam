@@ -48,8 +48,8 @@ from resources.data import MightyX, GROUP, PORMS
 @Mig19.on(events.NewMessage(incoming=True, pattern=r"\%sspam(?: |$)(.*)" % hl))
 @Mig20.on(events.NewMessage(incoming=True, pattern=r"\%sspam(?: |$)(.*)" % hl))
 async def spam(e):
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗦𝗽𝗮𝗺\n\nCommand:\n\n.spam <count> <message to spam>\n\n.spam <count> <reply to a message>\n\nCount must be a integer."
-    error = "Spam Module can only be used till 100 count. For bigger spams use BigSpam."
+    usage = f"**MODULE NAME : SPAM**\n\nCommand :\n\n{hl}spam <count> <message to spam>\n\n{hl}spam <count> <reply to a message>\n\nCount must be an integer."
+    error = f"__Spam Module can only be used till 100 count. For bigger spams use BigSpam.__"
     if e.sender_id in SUDO_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage, parse_mode=None, link_preview=None)
@@ -101,7 +101,7 @@ async def spam(e):
 @Mig19.on(events.NewMessage(incoming=True, pattern=r"\%sbigspam" % hl))
 @Mig20.on(events.NewMessage(incoming=True, pattern=r"\%sbigspam" % hl))
 async def spam(e):
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗕𝗶𝗴𝗦𝗽𝗮𝗺\n\nCommand:\n\n.bigspam <count> <message to spam>\n\n.bigspam <count> <reply to a message>\n\nCount must be a integer."
+    usage = f"**MODULE NAME : BIG SPAM**\n\nCommand :\n\n{hl}bigspam <count> <message to spam>\n\n{hl}bigspam <count> <reply to a message>\n\nCount must be an integer."
     if e.sender_id in SUDO_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage, parse_mode=None, link_preview=None )
@@ -157,7 +157,7 @@ async def spam(e):
 @Mig19.on(events.NewMessage(incoming=True, pattern=r"\%sdelayspam" % hl))
 @Mig20.on(events.NewMessage(incoming=True, pattern=r"\%sdelayspam" % hl))
 async def spam(e):
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗗𝗲𝗹𝗮𝘆𝗦𝗽𝗮𝗺\n\nCommand:\n\n.delayspam <sleep time> <count> <message to spam>\n\n.delayspam <sleep time> <count> <reply to a message>\n\nCount and Sleeptime must be a integer."     
+    usage = f"**MODULE NAME : DELAY SPAM**\n\nCommand :\n\n{hl}delayspam <sleep time> <count> <message to spam>\n\n{hl}delayspam <sleep time> <count> <reply to a message>\n\nCount and Sleeptime must be an integer."     
     if e.sender_id in SUDO_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage, parse_mode=None, link_preview=None)
@@ -217,7 +217,7 @@ async def spam(e):
 @Mig19.on(events.NewMessage(incoming=True, pattern=r"\%sdmspam" % hl))
 @Mig20.on(events.NewMessage(incoming=True, pattern=r"\%sdmspam" % hl))
 async def spam(e):
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = **DM Spam**\n\nCommand:\n\n.dmspam <count> <username> <message to spam>\n\n.dmspam <count> <username> <reply to a message>\n\nCount must be a integer."
+    usage = f"**MODULE NAME : DM SPAM**\n\nCommand :\n\n{hl}dmspam <count> <username> <message to spam>\n\n{hl}dmspam <count> <username> <reply to a message>\n\nCount must be an integer."
     if e.sender_id in SUDO_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage, parse_mode=None, link_preview=None )
@@ -229,7 +229,7 @@ async def spam(e):
             a = await e.client.get_entity(user)
             g = a.id
             if int(g) in MightyX:
-                text = f"I can't Dm To MightyX's Owner"
+                text = f"I Can't Dm To MightyX's Owner"
                 await e.reply(text, parse_mode=None, link_preview=None )
             elif int(g) in SUDO_USERS:
                 text = f"This Guy is a Sudo User."
@@ -247,7 +247,7 @@ async def spam(e):
             a = await e.client.get_entity(user)
             g = a.id
             if int(g) in MightyX:
-                text = f"I can't Dm To MightyX's Owner"
+                text = f"I Can't Dm To MightyX's Owner"
                 await e.reply(text, parse_mode=None, link_preview=None )
             elif int(g) in SUDO_USERS:
                 text = f"This Guy is a Sudo User."
@@ -266,7 +266,7 @@ async def spam(e):
             a = await e.client.get_entity(user)
             g = a.id
             if int(g) in MightyX:
-                text = f"I can't Dm To MightyX's Owner"
+                text = f"I Can't Dm To MightyX's Owner"
                 await e.reply(text, parse_mode=None, link_preview=None )
             elif int(g) in SUDO_USERS:
                 text = f"This Guy is a Sudo User."
@@ -324,6 +324,7 @@ async def spam(e):
 @Mig39.on(events.NewMessage(incoming=True, pattern=r"\%spornspam(?: |$)(.*)" % hl))
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%spornspam(?: |$)(.*)" % hl))
 async def pspam(e):
+    usage = f"**MODULE NAME : PORN SPAM** \n\n command : `{hl}pornspam <count>`"
     if e.sender_id in SUDO_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage, parse_mode=None, link_preview=None )
@@ -341,7 +342,6 @@ async def pspam(e):
                          await gifspam(e, smex) 
                      await asyncio.sleep(0.4)
         else:
-            usage = f"**MODULE NAME : PORN SPAM** \n\n command: `{hl}pornspam <count>`"
             await e.reply(usage)
 
 # By - LΣGΣΠD | @Hey_LEGEND
@@ -390,7 +390,7 @@ async def pspam(e):
 @Mig39.on(events.NewMessage(incoming=True, pattern=r"\%sppspam(?: |$)(.*)" % hl))
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%sppspam(?: |$)(.*)" % hl))
 async def ppspam(e):
-    usage = f"**MODULE NAME : PRIVATELY PORM SPAM** \n\ncommand: {hl}ppspam <count> <group or account's username>\n\n**Note :** if Spamming In Group - Accounts Should Be in Both Chats (Obviously)"
+    usage = f"**MODULE NAME : PRIVATELY PORM SPAM** \n\ncommand : {hl}ppspam <count> <group or account's username>\nInfo : give command from your personal group or from anywhere & spam pormography in target group or person's DM/PM\n\n**Note :**Your Spambots Should Be in Both Chats (Obviously)"
     if e.sender_id in SUDO_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage)
@@ -406,7 +406,7 @@ async def ppspam(e):
                 await e.reply(legend, parse_mode=None, link_preview=None )
             else:
                 counter = int(Mighty[0])
-                await e.reply("Starting PormSpam !! 😈")
+                await e.reply("😈 Starting PormSpam !! 😈")
                 for _ in range(counter):
                     p0rn = random.choice(PORMS)
                     async with e.client.action(uc, "document"):
