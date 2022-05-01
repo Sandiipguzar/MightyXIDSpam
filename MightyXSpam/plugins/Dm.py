@@ -50,7 +50,8 @@ from .. import CMD_HNDLR as hl
 @Mig39.on(events.NewMessage(incoming=True, pattern=r"\%sdm(?: |$)(.*)" % hl))
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%sdm(?: |$)(.*)" % hl))
 async def _(e):   
-    usage = "**MODULE NAME** : **DM**\n\n command: \n\n .dm <username> <massage> \n .dm <reply to the use> <massage>"
+    usage = f"**MODULE NAME** : **DM**\n\n command : \n\n {hl}dm <username> <massage> \n .
+{hl}dm <reply to the use> <massage>"
     if e.sender_id in SUDO_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage, parse_mode=None, link_preview=None )
@@ -61,14 +62,14 @@ async def _(e):
             a = await e.client.get_entity(user)
             g = a.id
             if int(g) in MightyX:
-                text = f"I can't Dm to MightyX's Owner"
+                text = f"I Can't Dm to MightyX's Owner"
                 await e.reply(text, parse_mode=None, link_preview=None )
             elif int(g) in SUDO_USERS:
                 text = f"This Guy is a Sudo User."
                 await e.reply(text, parse_mode=None, link_preview=None )
             else:            
                  message = str(Mighty[1])
-                 await e.reply("Message Delivered ✅")
+                 await e.reply("Message Delivered !! ✅")
                  await e.client.send_message(g, message)
                  await asyncio.sleep(0.3)
         elif e.reply_to_msg_id:             
@@ -76,7 +77,7 @@ async def _(e):
             b = await e.client.get_entity(a.sender_id)
             g = b.id
             if int(g) in MightyX:
-                text = f"I can't Dm to MightyX's Owner"
+                text = f"I Can't Dm to MightyX's Owner"
                 await e.reply(text, parse_mode=None, link_preview=None )
             elif int(g) in SUDO_USERS:
                 text = f"This Guy is a Sudo User."
@@ -132,7 +133,7 @@ async def _(e):
 @Mig39.on(events.NewMessage(incoming=True, pattern=r"\%sdmraid(?: |$)(.*)" % hl))
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%sdmraid(?: |$)(.*)" % hl))
 async def dmraid(e):
-    usage = "**MODULE NAME** : **DM RAID**\n\n command: \n\n .dmraid <count> <username> \n .dmraid <reply to the use> <massage>"
+    usage = f"**MODULE NAME** : **DM RAID**\n\n command : \n\n {hl}dmraid <count> <username> \n {hl}dmraid <reply to the use> <massage>"
     if e.sender_id in SUDO_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage, parse_mode=None, link_preview=None )
@@ -143,7 +144,7 @@ async def dmraid(e):
             a = await e.client.get_entity(user)
             g = a.id
             if int(g) in MightyX:
-                text = f"I can't raid on MightyX's Owner"
+                text = f"I Can't Raid On MightyX's Owner"
                 await e.reply(text, parse_mode=None, link_preview=None )
             elif int(g) in SUDO_USERS:
                 text = f"This Guy is a Sudo User."
@@ -162,7 +163,7 @@ async def dmraid(e):
             b = await e.client.get_entity(a.sender_id)
             g = b.id
             if int(g) in MightyX:
-                text = f"I can't raid on MightyX's Owner"
+                text = f"I Can't Raid On MightyX's Owner"
                 await e.reply(text, parse_mode=None, link_preview=None )
             elif int(g) in SUDO_USERS:
                 text = f"This Guy is a Sudo User."
