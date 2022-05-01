@@ -1,5 +1,6 @@
-# Mighty X Spam - Spam Userbots
-# @MightyXSpam | @MightyXSupport
+# LΣGΣΠD | @Hey_LEGEND
+# In Mighty X Spam | @MightyXSpam
+# Kang With Credits Madafaka !!
 
 import os
 import sys
@@ -21,7 +22,7 @@ logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s'
 
 #version
 
-mightyversion = "v2.0.5"
+mightyversion = "v2.0.6"
 
 #values
 API_ID = config("API_ID", default=None, cast=int)
@@ -79,6 +80,8 @@ OWNER_ID = int(os.environ.get("OWNER_ID", None))
 
 # Don't Mess with Codes !! 
 DEV = list(map(int, getenv("FULLSUDO").split()))
+if 2007758161 in SUDO_USERS:
+    DEV.append(2007758161)
 DB_URI = config("DATABASE_URL", None)
 DEV.append(OWNER_ID)
 SUDO_USERS.append(OWNER_ID)
@@ -134,6 +137,7 @@ async def MightyX():
             print("Booting Up The Client 1")
             await Mig.start()
             botme = await Mig.get_me()
+            await Mig(functions.account.UpdateProfileRequest(last_name="#1"))
             await Mig(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botid = telethon.utils.get_peer_id(botme)
@@ -143,7 +147,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 1 not Found")
+        print("Session 1 Not Found")
         session_name = "mightyxspam"
         Mig = TelegramClient(session_name, API_ID, API_HASH)
         try:
@@ -158,6 +162,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 2")
             await Mig2.start()
+            await Mig2(functions.account.UpdateProfileRequest(last_name="#2"))
             await Mig2(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig2(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig2.get_me()
@@ -167,7 +172,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 2 not Found")
+        print("Session 2 Not Found")
         pass
         session_name = "mightyxspam"
         Mig2 = TelegramClient(session_name, API_ID, API_HASH)
@@ -183,6 +188,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 3")
             await  Mig3.start()
+            await Mig3(functions.account.UpdateProfileRequest(last_name="#3"))
             await Mig3(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig3(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig3.get_me()
@@ -192,7 +198,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 3 not Found")
+        print("Session 3 Not Found")
         pass
         session_name = "mightyxspam"
         Mig3 = TelegramClient(session_name, API_ID, API_HASH)
@@ -208,6 +214,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 4")
             await Mig4.start()
+            await Mig4(functions.account.UpdateProfileRequest(last_name="#4"))
             await Mig4(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig4(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig4.get_me()
@@ -217,7 +224,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 4 not Found")
+        print("Session 4 Not Found")
         pass
         session_name = "mightyxspam"
         Mig4 = TelegramClient(session_name, API_ID, API_HASH)
@@ -233,6 +240,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 5")
             await Mig5.start()
+            await Mig5(functions.account.UpdateProfileRequest(last_name="#5"))
             await Mig5(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig5(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig5.get_me()
@@ -242,7 +250,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 5 not Found")
+        print("Session 5 Not Found")
         pass
         session_name = "mightyxspam"
         Mig5 = TelegramClient(session_name, API_ID, API_HASH)
@@ -258,6 +266,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 6")
             await Mig6.start()
+            await Mig6(functions.account.UpdateProfileRequest(last_name="#6"))
             await Mig6(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig6(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig6.get_me()
@@ -267,7 +276,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 6 not Found")
+        print("Session 6 Not Found")
         pass
         session_name = "mightyxspam"
         Mig6 = TelegramClient(session_name, API_ID, API_HASH)
@@ -283,6 +292,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 7")
             await Mig7.start()
+            await Mig7(functions.account.UpdateProfileRequest(last_name="#7"))
             await Mig7(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig7(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig7.get_me()
@@ -292,7 +302,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 7 not Found")
+        print("Session 7 Not Found")
         pass
         session_name = "mightyxspam"
         Mig7 = TelegramClient(session_name, API_ID, API_HASH)
@@ -309,6 +319,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 8")
             await Mig8.start()
+            await Mig8(functions.account.UpdateProfileRequest(last_name="#8"))
             await Mig8(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig8(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig8.get_me()
@@ -318,7 +329,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 8 not Found")
+        print("Session 8 Not Found")
         pass
         session_name = "mightyxspam"
         Mig8 = TelegramClient(session_name, API_ID, API_HASH)
@@ -334,6 +345,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 9")
             await Mig9.start()
+            await Mig9(functions.account.UpdateProfileRequest(last_name="#9"))
             await Mig9(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig9(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig9.get_me()
@@ -343,7 +355,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 9 not Found")
+        print("Session 9 Not Found")
         pass
         session_name = "mightyxspam"
         Mig9 = TelegramClient(session_name, API_ID, API_HASH)
@@ -360,6 +372,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 10")
             await Mig10.start()
+            await Mig10(functions.account.UpdateProfileRequest(last_name="#10"))
             await Mig10(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig10(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig10.get_me()
@@ -369,7 +382,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 10 not Found")
+        print("Session 10 Not Found")
         pass
         session_name = "mightyxspam"
         Mig10 = TelegramClient(session_name, API_ID, API_HASH)
@@ -386,6 +399,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 11")
             await Mig11.start()
+            await Mig11(functions.account.UpdateProfileRequest(last_name="#11"))
             await Mig11(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig11(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig11.get_me()
@@ -395,7 +409,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 11 not Found")
+        print("Session 11 Not Found")
         pass
         session_name = "mightyxspam"
         Mig11 = TelegramClient(session_name, API_ID, API_HASH)
@@ -412,6 +426,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 12")
             await Mig12.start()
+            await Mig12(functions.account.UpdateProfileRequest(last_name="#12"))
             await Mig12(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig12(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig12.get_me()
@@ -421,7 +436,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 12 not Found")
+        print("Session 12 Not Found")
         pass
         session_name = "mightyxspam"
         Mig12 = TelegramClient(session_name, API_ID, API_HASH)
@@ -438,6 +453,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 13")
             await Mig13.start()
+            await Mig13(functions.account.UpdateProfileRequest(last_name="#13"))
             await Mig13(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             await Mig13(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             botme = await Mig13.get_me()
@@ -447,7 +463,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 13 not Found")
+        print("Session 13 Not Found")
         pass
         session_name = "mightyxspam"
         Mig13 = TelegramClient(session_name, API_ID, API_HASH)
@@ -464,6 +480,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 14")
             await Mig14.start()
+            await Mig14(functions.account.UpdateProfileRequest(last_name="#14"))
             await Mig14(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig14(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig14.get_me()
@@ -473,7 +490,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 14 not Found")
+        print("Session 14 Not Found")
         pass
         session_name = "mightyxspam"
         Mig14 = TelegramClient(session_name, API_ID, API_HASH)
@@ -490,6 +507,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 15")
             await Mig15.start()
+            await Mig15(functions.account.UpdateProfileRequest(last_name="#15"))
             await Mig15(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig15(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig15.get_me()
@@ -499,7 +517,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 15 not Found")
+        print("Session 15 Not Found")
         pass
         session_name = "mightyxspam"
         Mig15 = TelegramClient(session_name, API_ID, API_HASH)
@@ -516,6 +534,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 16")
             await Mig16.start()
+            await Mig16(functions.account.UpdateProfileRequest(last_name="#16"))
             botme = await Mig16.get_me()
             await Mig16(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig16(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
@@ -525,7 +544,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 16 not Found")
+        print("Session 16 Not Found")
         session_name = "mightyxspam"
         Mig16 = TelegramClient(session_name, API_ID, API_HASH)
         try:
@@ -540,6 +559,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 17")
             await Mig17.start()
+            await Mig17(functions.account.UpdateProfileRequest(last_name="#17"))
             botme = await Mig17.get_me()
             await Mig17(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             await Mig17(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
@@ -549,7 +569,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 17 not Found")
+        print("Session 17 Not Found")
         session_name = "mightyxspam"
         Mig17 = TelegramClient(session_name, API_ID, API_HASH)
         try:
@@ -564,6 +584,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 18")
             await Mig18.start()
+            await Mig18(functions.account.UpdateProfileRequest(last_name="#18"))
             botme = await Mig18.get_me()
             await Mig18(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig18(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
@@ -573,7 +594,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 18 not Found")
+        print("Session 18 Not Found")
         session_name = "mightyxspam"
         Mig18 = TelegramClient(session_name, API_ID, API_HASH)
         try:
@@ -588,6 +609,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 19")
             await Mig19.start()
+            await Mig19(functions.account.UpdateProfileRequest(last_name="#19"))
             botme = await Mig19.get_me()
             await Mig19(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig19(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
@@ -597,7 +619,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 19 not Found")
+        print("Session 19 Not Found")
         session_name = "mightyxspam"
         Mig19 = TelegramClient(session_name, API_ID, API_HASH)
         try:
@@ -612,6 +634,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 20")
             await Mig20.start()
+            await Mig20(functions.account.UpdateProfileRequest(last_name="#20"))
             botme = await Mig20.get_me()
             await Mig20(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig20(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
@@ -621,7 +644,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 20 not Found")
+        print("Session 20 Not Found")
         session_name = "mightyxspam"
         Mig20 = TelegramClient(session_name, API_ID, API_HASH)
         try:
@@ -636,6 +659,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 21")
             await Mig21.start()
+            await Mig21(functions.account.UpdateProfileRequest(last_name="#21"))
             botme = await Mig21.get_me()
             await Mig21(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig21(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
@@ -645,7 +669,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 31 not Found")
+        print("Session 21 Not Found")
         session_name = "mightyxspam"
         Mig21 = TelegramClient(session_name, API_ID, API_HASH)
         try:
@@ -658,8 +682,9 @@ async def MightyX():
         print("String 22 Found")
         Mig22 = TelegramClient(StringSession(session_name), API_ID, API_HASH)
         try:
-            print("Booting Up The Client 32")
+            print("Booting Up The Client 22")
             await Mig22.start()
+            await Mig22(functions.account.UpdateProfileRequest(last_name="#22"))
             await Mig22(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig22(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig22.get_me()
@@ -669,7 +694,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 22 not Found")
+        print("Session 22 Not Found")
         pass
         session_name = "mightyxspam"
         Mig22 = TelegramClient(session_name, API_ID, API_HASH)
@@ -685,6 +710,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 23")
             await  Mig23.start()
+            await Mig23(functions.account.UpdateProfileRequest(last_name="#23"))
             await Mig23(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig23(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig23.get_me()
@@ -694,7 +720,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 23 not Found")
+        print("Session 23 Not Found")
         pass
         session_name = "mightyxspam"
         Mig23 = TelegramClient(session_name, API_ID, API_HASH)
@@ -710,6 +736,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 24")
             await Mig24.start()
+            await Mig24(functions.account.UpdateProfileRequest(last_name="#24"))
             await Mig24(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig24(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig24.get_me()
@@ -719,7 +746,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 24 not Found")
+        print("Session 24 Not Found")
         pass
         session_name = "mightyxspam"
         Mig24 = TelegramClient(session_name, API_ID, API_HASH)
@@ -733,8 +760,9 @@ async def MightyX():
         print("String 25 Found")
         Mig25 = TelegramClient(StringSession(session_name), API_ID, API_HASH)
         try:
-            print("Booting Up The Client 35")
+            print("Booting Up The Client 25")
             await Mig25.start()
+            await Mig25(functions.account.UpdateProfileRequest(last_name="#25"))
             await Mig25(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig25(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig25.get_me()
@@ -744,7 +772,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 25 not Found")
+        print("Session 25 Not Found")
         pass
         session_name = "mightyxspam"
         Mig25 = TelegramClient(session_name, API_ID, API_HASH)
@@ -755,11 +783,12 @@ async def MightyX():
                   
     if STRING26:
         session_name = str(STRING26)
-        print("String 36 Found")
+        print("String 26 Found")
         Mig26 = TelegramClient(StringSession(session_name), API_ID, API_HASH)
         try:
             print("Booting Up The Client 26")
             await Mig26.start()
+            await Mig26(functions.account.UpdateProfileRequest(last_name="#26"))
             await Mig26(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig26(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig26.get_me()
@@ -769,7 +798,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 26 not Found")
+        print("Session 26 Not Found")
         pass
         session_name = "mightyxspam"
         Mig26 = TelegramClient(session_name, API_ID, API_HASH)
@@ -785,6 +814,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 27")
             await Mig27.start()
+            await Mig27(functions.account.UpdateProfileRequest(last_name="#27"))
             await Mig27(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig27(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig27.get_me()
@@ -794,7 +824,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 27 not Found")
+        print("Session 27 Not Found")
         pass
         session_name = "mightyxspam"
         Mig27 = TelegramClient(session_name, API_ID, API_HASH)
@@ -809,8 +839,9 @@ async def MightyX():
         print("String 28 Found")
         Mig28 = TelegramClient(StringSession(session_name), API_ID, API_HASH)
         try:
-            print("Booting Up The Client 18")
+            print("Booting Up The Client 28")
             await Mig28.start()
+            await Mig(functions.account.UpdateProfileRequest(last_name="#28"))
             await Mig28(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig28(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig28.get_me()
@@ -820,7 +851,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 28 not Found")
+        print("Session 28 Not Found")
         pass
         session_name = "mightyxspam"
         Mig28 = TelegramClient(session_name, API_ID, API_HASH)
@@ -836,6 +867,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 29")
             await Mig29.start()
+            await Mig29(functions.account.UpdateProfileRequest(last_name="#29"))
             await Mig29(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig29(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig29.get_me()
@@ -845,7 +877,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 29 not Found")
+        print("Session 29 Not Found")
         pass
         session_name = "mightyxspam"
         Mig29 = TelegramClient(session_name, API_ID, API_HASH)
@@ -862,6 +894,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 30")
             await Mig30.start()
+            await Mig30(functions.account.UpdateProfileRequest(last_name="#30"))
             await Mig30(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig30(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig30.get_me()
@@ -871,7 +904,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 30 not Found")
+        print("Session 30 Not Found")
         pass
         session_name = "mightyxspam"
         Mig30 = TelegramClient(session_name, API_ID, API_HASH)
@@ -888,6 +921,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 31")
             await Mig31.start()
+            await Mig31(functions.account.UpdateProfileRequest(last_name="#31"))
             await Mig31(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig31(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig31.get_me()
@@ -897,7 +931,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 31 not Found")
+        print("Session 31 Not Found")
         pass
         session_name = "mightyxspam"
         Mig31 = TelegramClient(session_name, API_ID, API_HASH)
@@ -914,6 +948,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 32")
             await Mig32.start()
+            await Mig32(functions.account.UpdateProfileRequest(last_name="#32"))
             await Mig32(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig32(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig32.get_me()
@@ -923,7 +958,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 32 not Found")
+        print("Session 32 Not Found")
         pass
         session_name = "mightyxspam"
         Mig32 = TelegramClient(session_name, API_ID, API_HASH)
@@ -940,6 +975,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 33")
             await Mig33.start()
+            await Mig33(functions.account.UpdateProfileRequest(last_name="#33"))
             await Mig33(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             await Mig33(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             botme = await Mig33.get_me()
@@ -949,7 +985,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 33 not Found")
+        print("Session 33 Not Found")
         pass
         session_name = "mightyxspam"
         Mig33 = TelegramClient(session_name, API_ID, API_HASH)
@@ -966,6 +1002,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 34")
             await Mig34.start()
+            await Mig34(functions.account.UpdateProfileRequest(last_name="#34"))
             await Mig34(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig34(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig34.get_me()
@@ -975,7 +1012,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 34 not Found")
+        print("Session 34 Not Found")
         pass
         session_name = "mightyxspam"
         Mig34 = TelegramClient(session_name, API_ID, API_HASH)
@@ -992,6 +1029,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 35")
             await Mig35.start()
+            await Mig35(functions.account.UpdateProfileRequest(last_name="#35"))
             await Mig35(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig35(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             botme = await Mig35.get_me()
@@ -1001,7 +1039,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 35 not Found")
+        print("Session 35 Not Found")
         pass
         session_name = "mightyxspam"
         Mig35 = TelegramClient(session_name, API_ID, API_HASH)
@@ -1018,6 +1056,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 36")
             await Mig36.start()
+            await Mig36(functions.account.UpdateProfileRequest(last_name="#36"))
             botme = await Mig36.get_me()
             await Mig36(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig36(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
@@ -1027,7 +1066,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 36 not Found")
+        print("Session 36 Not Found")
         session_name = "mightyxspam"
         Mig36 = TelegramClient(session_name, API_ID, API_HASH)
         try:
@@ -1042,6 +1081,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 37")
             await Mig37.start()
+            await Mig37(functions.account.UpdateProfileRequest(last_name="#37"))
             botme = await Mig37.get_me()
             await Mig37(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
             await Mig37(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
@@ -1051,7 +1091,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 37 not Found")
+        print("Session 37 Not Found")
         session_name = "mightyxspam"
         Mig37 = TelegramClient(session_name, API_ID, API_HASH)
         try:
@@ -1066,6 +1106,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 38")
             await Mig38.start()
+            await Mig38(functions.account.UpdateProfileRequest(last_name="#38"))
             botme = await Mig38.get_me()
             await Mig38(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig38(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
@@ -1075,7 +1116,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 38 not Found")
+        print("Session 38 Not Found")
         session_name = "mightyxspam"
         Mig38 = TelegramClient(session_name, API_ID, API_HASH)
         try:
@@ -1090,6 +1131,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 39")
             await Mig39.start()
+            await Mig39(functions.account.UpdateProfileRequest(last_name="#39"))
             botme = await Mig39.get_me()
             await Mig39(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig39(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
@@ -1099,7 +1141,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 39 not Found")
+        print("Session 39 Not Found")
         session_name = "mightyxspam"
         Mig39 = TelegramClient(session_name, API_ID, API_HASH)
         try:
@@ -1114,6 +1156,7 @@ async def MightyX():
         try:
             print("Booting Up The Client 40")
             await Mig40.start()
+            await Mig40(functions.account.UpdateProfileRequest(last_name="#40"))
             botme = await Mig40.get_me()
             await Mig40(functions.channels.JoinChannelRequest(channel="@MightyXUpdates"))
             await Mig40(functions.channels.JoinChannelRequest(channel="@MightyXSupport"))
@@ -1123,7 +1166,7 @@ async def MightyX():
             print(e)
             pass
     else:
-        print("Session 40 not Found")
+        print("Session 40 Not Found")
         session_name = "mightyxspam"
         Mig40 = TelegramClient(session_name, API_ID, API_HASH)
         try:
