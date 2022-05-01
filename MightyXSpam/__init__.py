@@ -20,6 +20,9 @@ from telethon.tl.functions.messages import ImportChatInviteRequest
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
                     level=logging.WARNING)
 
+# owner mention
+mention = f"[{ALIVE_NAME}](tg://user?id={OWNER_ID})"
+
 #version
 
 mightyversion = "v2.0.6"
