@@ -53,7 +53,7 @@ que = {}
 @Mig39.on(events.NewMessage(incoming=True, pattern=r"\%sraid(?: |$)(.*)" % hl))
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%sraid(?: |$)(.*)" % hl))
 async def spam(e):
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗥𝗮𝗶𝗱\n\nCommand:\n\n`.raid` <count> <Username of User>\n\n.raid <count> <reply to a User>\n\nCount must be a integer."
+    usage = f"**MODULE NAME : RAID**\n\nCommand :\n\n{hl}raid <count> <Username of User>\n\n{hl}raid <count> <reply to a User>\n\nCount must be an integer."
     if e.sender_id in SUDO_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage, parse_mode=None, link_preview=None )
@@ -64,7 +64,7 @@ async def spam(e):
             a = await e.client.get_entity(user)
             g = a.id
             if int(g) in MightyX:
-                text = f"I can't raid on MightyX's Owner"
+                text = f"Sorry, I Can't Raid On MightyX's Owner"
                 await e.reply(text, parse_mode=None, link_preview=None )
             elif int(g) in SUDO_USERS:
                 text = f"This Guy is a Sudo User."
@@ -84,7 +84,7 @@ async def spam(e):
             b = await e.client.get_entity(a.sender_id)
             g = b.id
             if int(g) in MightyX:
-                text = f"I can't raid on MightyX's Owner"
+                text = f"Sorry, I Can't Raid On MightyX's Owner"
                 await e.reply(text, parse_mode=None, link_preview=None )
             elif int(g) in SUDO_USERS:
                 text = f"This Guy is a Sudo User."
@@ -201,7 +201,7 @@ async def _(event):
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%sreplyraid(?: |$)(.*)" % hl))
 async def _(e):
     global que
-    usage = f"𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗥𝗲𝗽𝗹𝘆𝗥𝗮𝗶𝗱\n\nCommand:\n\n.replyraid <Username of User>\n\n.replyraid <reply to a User>."
+    usage = f"**MODULE NAME : REPLY RAID**\n\nCommand :\n\n{hl}replyraid <Username of User>\n\n{hl}replyraid <reply to a User>."
     if e.sender_id in SUDO_USERS:
         Mighty = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         Migx = await e.get_reply_message()
@@ -211,7 +211,7 @@ async def _(e):
             user_idd = a.id
             user_id = int(user_idd)
             if int(user_id) in MightyX:
-                text = f"Can't raid on MightyX's Owner."
+                text = f"Sorry, I Can't Raid On MightyX's Owner."
                 await e.reply(text, parse_mode=None, link_preview=None )
             elif int(user_id) in SUDO_USERS:
                 text = f"This Guy is a Sudo User."
@@ -221,7 +221,7 @@ async def _(e):
                 nobi = que.get(user_id)
                 nobita = [user_id]
                 nobi.append(nobita)
-                text = f"Activated ReplyRaid 🔥"
+                text = f"Activated ReplyRaid !! ✅"
                 await e.reply(text, parse_mode=None, link_preview=None )
         elif e.reply_to_msg_id:             
             a = await e.get_reply_message()
@@ -229,7 +229,7 @@ async def _(e):
             user_idd = umser.id
             user_id = int(user_idd)
             if int(user_id) in MightyX:
-                text = f"Can't raid on MightyX's Owner."
+                text = f"Sorry, I Can't Raid On MightyX's Owner."
                 await e.reply(text, parse_mode=None, link_preview=None )
             elif int(user_id) in SUDO_USERS:
                 text = f"This Guy is a Sudo User."
@@ -239,7 +239,7 @@ async def _(e):
                 nobi = que.get(user_id)
                 nobita = [user_id]
                 nobi.append(nobita)
-                text = f"Activated ReplyRaid"
+                text = f"Activated ReplyRaid !! ✅"
                 await e.reply(text, parse_mode=None, link_preview=None )
         else:
             await e.reply(usage)
@@ -286,7 +286,7 @@ async def _(e):
 @Mig39.on(events.NewMessage(incoming=True, pattern=r"\%sdreplyraid(?: |$)(.*)" % hl))
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%sdreplyraid(?: |$)(.*)" % hl))
 async def _(e):
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗗𝗲𝗮𝗰𝘁𝗶𝘃𝗮𝘁𝗲 𝗥𝗲𝗽𝗹𝘆𝗥𝗮𝗶𝗱\n\nCommand:\n\n.dreplyraid <Username of User>\n\n.dreplyraid <reply to a User>"
+    usage = f"**MODULE NAME : DREPLY RAID**\n\nCommand :\n\n{hl}dreplyraid <Username of User>\n\n{hl}dreplyraid <reply to a User>"
     global que    
     if e.sender_id in SUDO_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
@@ -302,7 +302,7 @@ async def _(e):
                 queue.pop(0)
             except Exception as f:
                 pass
-            text = "De-Activated Reply Raid ☑️"
+            text = "De-Activated Reply Raid !! ✅"
             await e.reply(text, parse_mode=None, link_preview=None )
         elif e.reply_to_msg_id:             
             a = await e.get_reply_message()
@@ -313,7 +313,7 @@ async def _(e):
                 queue.pop(0)
             except Exception as f:
                 pass
-            text = "De-Activated Reply Raid"
+            text = "De-Activated Reply Raid !! ✅"
             await e.reply(text, parse_mode=None, link_preview=None )
         else:
             await e.reply(usage, parse_mode=None, link_preview=None )
@@ -362,7 +362,7 @@ async def _(e):
 @Mig39.on(events.NewMessage(incoming=True, pattern=r"\%sdelayraid(?: |$)(.*)" % hl))
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%sdelayraid(?: |$)(.*)" % hl))
 async def _(event):
-   usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗗𝗘𝗟𝗔𝗬𝗥𝗔𝗜𝗗\n\nCommand:\n\n.delayraid <delay> <count> <Username of User>\n\n.delayraid <delay> <count> <reply to a User>\n\nCount must be a integer."        
+   usage = f"**MODULE NAME : DELAY RAID**\n\nCommand:\n\n{hl}delayraid <delay> <count> <Username of User>\n\n{hl}delayraid <delay> <count> <reply to a User>\n\nCount must be an integer."        
    if event.sender_id in SUDO_USERS:
          if event.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage, parse_mode=None, link_preview=None )
@@ -372,7 +372,7 @@ async def _(event):
              a = await event.client.get_entity(user)
              e = a.id
              if int(e) in MightyX:
-                    text = f"I can't raid on MightyX's Owner"
+                    text = f"Sorry, I Can't Raid On MightyX's Owner"
                     await event.reply(text, parse_mode=None, link_preview=None )
              elif int(e) in SUDO_USERS:
                     text = f"This Guy is a Sudo User."
@@ -393,7 +393,7 @@ async def _(event):
                b = await event.client.get_entity(a.sender_id)
                e = b.id
                if int(e) in MightyX:
-                       text = f"I can't raid on MightyX's Owner"
+                       text = f"Sorry, I Can't Raid On MightyX's Owner"
                        await event.reply(text, parse_mode=None, link_preview=None )
                elif int(e) in SUDO_USERS:
                        text = f"This Guy is a Sudo User."
