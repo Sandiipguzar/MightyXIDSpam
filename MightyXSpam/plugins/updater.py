@@ -48,8 +48,8 @@ from .. import CMD_HNDLR as hl
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%supdate(?: |$)(.*)" % hl))
 async def update(e):
     if e.sender_id in DEV:
-        text = "**Updating Your MightyXSpamBots**\n`Please Wait... 🌚`"
-        await e.reply(text, link_preview=None)
+        text = f"**Updating Your MightyXSpamBots**\n`Please Wait... 🌚`"
+        await e.reply(text)
         try:
             await Mig.disconnect()
         except Exception:
