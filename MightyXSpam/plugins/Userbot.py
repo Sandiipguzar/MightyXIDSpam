@@ -1,17 +1,16 @@
-# Mighty X Spam - Spam Userbots 
-# @MightyXSpam | Keep Credits Madafaka !!
+# LΣGΣΠD | @Hey_LEGEND
+# In Mighty X Spam | @MightyXSpam
+# Kang With Credits Madafaka !!
  
 import os
 import sys
 from MightyXSpam import Mig, Mig2, Mig3, Mig4, Mig5 , Mig6, Mig7, Mig8, Mig9, Mig10, Mig11, Mig12, Mig13, Mig14, Mig15, Mig16, Mig17, Mig18, Mig19, Mig20, Mig21, Mig22, Mig23, Mig24, Mig25, Mig26, Mig27, Mig28, Mig29, Mig30, Mig31, Mig32, Mig33, Mig34, Mig35, Mig36, Mig37, Mig38, Mig39, Mig40, SUDO_USERS, OWNER_ID
-from MightyXSpam import ALIVE_NAME, ALIVE_PIC, ALIVE_TEXT, mightyversion
+from MightyXSpam import ALIVE_NAME, ALIVE_PIC, ALIVE_TEXT, mightyversion, mention
 from .. import CMD_HNDLR as hl
 from telethon import events, version
 from telethon.tl.functions.users import GetFullUserRequest
 from time import time
 from datetime import datetime
- 
-mention = f"[{ALIVE_NAME}](tg://user?id={OWNER_ID})"
  
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -90,7 +89,7 @@ async def ping(e):
             firstname = user.user.first_name
             userid = user.user.id
     if userid == OWNER_ID:
-        await check.edit(f"█▀█ █▀█ █▄░█ █▀▀\n█▀▀ █▄█ █░▀█ █▄█\n\n    ⚡ 𝐌𝐢𝐠𝐡𝐭𝐲 𝐗 𝐒𝐩𝐚𝐦 ⚡\n\n𝐏𝐢𝐧𝐠 : `{ms}` ᴍs\n𝐎𝐰𝐧𝐞𝐫 : [{firstname}](tg://user?id={userid})")
+        await check.edit(f"█▀█ █▀█ █▄░█ █▀▀\n█▀▀ █▄█ █░▀█ █▄█\n\n    ⚡ 𝐌𝐢𝐠𝐡𝐭𝐲 𝐗 𝐒𝐩𝐚𝐦 ⚡\n\n𝐏𝐢𝐧𝐠 : `{ms}` ᴍs\n𝐎𝐰𝐧𝐞𝐫 : {mention}")
     else:
         await check.edit(f"█▀█ █▀█ █▄░█ █▀▀\n█▀▀ █▄█ █░▀█ █▄█\n\n    ⚡ 𝐌𝐢𝐠𝐡𝐭𝐲 𝐗 𝐒𝐩𝐚𝐦 ⚡\n\n𝐏𝐢𝐧𝐠 : `{ms}` ᴍs\n𝐒𝐮𝐝𝐨 𝐔𝐬𝐞𝐫 : [{firstname}](tg://user?id={userid})")
  
