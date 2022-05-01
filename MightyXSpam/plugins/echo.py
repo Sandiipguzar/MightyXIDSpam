@@ -54,13 +54,13 @@ from resources.data import MightyX
 @Mig39.on(events.NewMessage(incoming=True, pattern=r"\%saddecho(?: |$)(.*)" % hl))
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%saddecho(?: |$)(.*)" % hl))
 async def echo(event):
-  usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = **ECHO**\n\nCommand:\n\n `{hl}addecho <reply to a User>`"
+  usage = f"**MODULE NAME : ADD ECHO**\n\nCommand :\n\n `{hl}addecho <reply to a User>`"
   if event.sender_id in SUDO_USERS:
      if event.reply_to_msg_id is not None:
             reply_msg = await event.get_reply_message()
             user_id = reply_msg.sender_id
             if int(user_id) in MightyX:
-                    text = f"I can't echo MightyX's Owner"
+                    text = f"I Can't Echo MightyX's Owner"
                     await event.reply(text, parse_mode=None, link_preview=None )
             elif int(user_id) in SUDO_USERS:
                     text = f"This Guy is a Sudo User."
@@ -74,10 +74,10 @@ async def echo(event):
                  except BaseException:
                     pass
                  if is_echo(user_id, chat_id):
-                     await event.reply("The user is already enabled with echo ")
+                     await event.reply("Echo Already Enabled On This User !!")
                      return
                  addecho(user_id, chat_id)
-                 await event.reply("Echo activated on the user ✅")
+                 await event.reply("Echo Activated On The User !! ✅")
      else:
           await event.reply(usage)
 
@@ -122,7 +122,7 @@ async def echo(event):
 @Mig39.on(events.NewMessage(incoming=True, pattern=r"\%srmecho(?: |$)(.*)" % hl))
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%srmecho(?: |$)(.*)" % hl))
 async def echo(event):
-  usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = **ECHO**\n\nCommand:\n\n `{hl}rmecho <reply to a User>`"
+  usage = f"**MODULE NAME : RM ECHO**\n\nCommand :\n\n `{hl}rmecho <reply to a User>`"
   if event.sender_id in SUDO_USERS:
      if event.reply_to_msg_id is not None:
             reply_msg = await event.get_reply_message()
@@ -136,9 +136,9 @@ async def echo(event):
                 pass
             if is_echo(user_id, chat_id):
                 remove_echo(user_id, chat_id)
-                await event.reply("Echo has been stopped for the user ☑️")
+                await event.reply("Echo Has Been Stopped For The User !! ☑️")
             else:
-                await event.reply("The user is not activated with echo")
+                await event.reply("Echo Is Already Off !!")
      else:
           await event.reply(usage)
 
