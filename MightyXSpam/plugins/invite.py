@@ -26,7 +26,6 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from urllib.error import HTTPError
 
 
-
 async def get_chatinfo(event):
     chat = event.pattern_match.group(1)
     chat_info = None
@@ -111,7 +110,7 @@ def user_full_name(user):
 @Mig39.on(events.NewMessage(incoming=True, pattern=r"\%sinviteall(?: |$)(.*)" % hl))
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%sinviteall(?: |$)(.*)" % hl))
 async def get_users(event):
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗜𝗻𝘃𝗶𝘁𝗲𝗔𝗹𝗹\n\nCommand:\n\n.inviteall <group username/id/link>"
+    usage = f"**MODULE NAME : INVITEALL**\n\nCommand :\n\n{hl}inviteall <group username/id/link>"
     if event.sender_id in DEV:
         sender = await event.get_sender() ; me = await event.client.get_me()
     if not sender.id == me.id:
