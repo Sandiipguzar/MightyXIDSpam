@@ -50,7 +50,7 @@ from .. import CMD_HNDLR as hl
 @Mig39.on(events.NewMessage(incoming=True, pattern=r"\%sdm(?: |$)(.*)" % hl))
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%sdm(?: |$)(.*)" % hl))
 async def _(e):   
-    usage = f"**MODULE NAME** : **DM**\n\n command : \n\n {hl}dm <username> <massage> \n{hl}dm <reply to the use> <massage>"
+    usage = f"**MODULE NAME : DM**\n\n command : \n\n {hl}dm <username> <massage> \n{hl}dm <reply to the use> <massage>"
     if e.sender_id in SUDO_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage, parse_mode=None, link_preview=None )
@@ -132,7 +132,7 @@ async def _(e):
 @Mig39.on(events.NewMessage(incoming=True, pattern=r"\%sdmraid(?: |$)(.*)" % hl))
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%sdmraid(?: |$)(.*)" % hl))
 async def dmraid(e):
-    usage = f"**MODULE NAME** : **DM RAID**\n\n command : \n\n {hl}dmraid <count> <username> \n {hl}dmraid <reply to the use> <massage>"
+    usage = f"**MODULE NAME : DM RAID**\n\n command : \n\n {hl}dmraid <count> <username> \n {hl}dmraid <reply to the use> <massage>"
     if e.sender_id in SUDO_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage, parse_mode=None, link_preview=None )
