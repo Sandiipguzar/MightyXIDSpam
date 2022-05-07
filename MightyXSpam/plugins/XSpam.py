@@ -72,10 +72,10 @@ async def spam(e):
             message = smex.text
             counter = int(Mighty[0])
             if counter > 100:
-                return await e.reply(error, parse_mode=None, link_preview=None)
+                return await e.reply(error)
             await asyncio.wait([e.respond(message) for i in range(counter)])
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None)
+            await e.reply(usage)
 
 
 #bigspam
@@ -132,7 +132,7 @@ async def spam(e):
                     await e.client.send_message(e.chat_id, message)
                     await asyncio.sleep(0.3)
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
+            await e.reply(usage)
 
 #delayspam
 
@@ -192,7 +192,7 @@ async def spam(e):
                     await e.client.send_message(e.chat_id, message)
                     await asyncio.sleep(sleeptime)
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None)
+            await e.reply(usage)
 
 #abuse
 
@@ -279,7 +279,7 @@ async def spam(e):
                         await e.client.send_message(g, message)
                         await asyncio.sleep(0.3)
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None )       
+            await e.reply(usage)       
 
 # LΣGΣΠD | @Hey_LEGEND
 
@@ -324,7 +324,7 @@ async def spam(e):
 @Mig39.on(events.NewMessage(incoming=True, pattern=r"\%spornspam(?: |$)(.*)" % hl))
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%spornspam(?: |$)(.*)" % hl))
 async def pspam(e):
-    usage = f"**MODULE NAME : PORN SPAM** \n\n command : `{hl}pornspam <count>`"
+    usage = f"**MODULE NAME : PORN SPAM** \n\ncommand : `{hl}pornspam <count>`"
     if e.sender_id in SUDO_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage, parse_mode=None, link_preview=None )
