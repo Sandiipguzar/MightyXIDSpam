@@ -79,7 +79,7 @@ async def name(e):
             except Exception as e:
                 await print(str(e))   
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
+            await e.reply(usage)
 
 #bio 
             
@@ -139,7 +139,7 @@ async def _(e):
             except Exception as e:
                 await print(str(e))   
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None )         
+            await e.reply(usage)         
         
 
 # statss                   
@@ -348,7 +348,7 @@ async def pfp(event):
 @Mig39.on(events.NewMessage(incoming=True, pattern=r"\%sdelpic(?: |$)(.*)" % hl))
 @Mig40.on(events.NewMessage(incoming=True, pattern=r"\%sdelpic(?: |$)(.*)" % hl))
 async def remove_profilepic(delpfp):
-    usage = f"**MODULE NAME : DEL PIC**\n\nCommand :\n\n.delpic <count/all> to delete pfp(s) of spam ids>"
+    usage = f"**MODULE NAME : DEL PIC**\n\nCommand :\n\n{hl}delpic <count/all> to delete pfp(s) of spam ids>"
     botme = await delpfp.client.get_me()
     botid = telethon.utils.get_peer_id(botme) 
     group = delpfp.text[8:]
