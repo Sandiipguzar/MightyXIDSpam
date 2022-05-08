@@ -58,14 +58,14 @@ async def _(e):
         if len(e.text) > 6:
             bc = mighty[0]
             text = "__Joining...__"
-            event = await e.reply(text, parse_mode=None, link_preview=None )
+            event = await e.reply(text)
             try:
                 await e.client(functions.channels.JoinChannelRequest(channel=bc))
                 await event.edit("Joined Successfully !! ✅")
             except Exception as e:
                 await event.edit(str(e))   
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
+            await e.reply(usage)
 
 
 
@@ -116,14 +116,14 @@ async def _(e):
         if len(e.text) > 7:
             bc = mighty[0]
             text = "__Joining....__"
-            event = await e.reply(text, parse_mode=None, link_preview=None )
+            event = await e.reply(text)
             try:
                 await e.client(ImportChatInviteRequest(bc))
                 await event.edit("Joined Successfully (Private Group/Channel) ✅")
             except Exception as e:
                 await event.edit(str(e))   
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
+            await e.reply(usage)
 
 
 
@@ -176,11 +176,11 @@ async def _(e):
             bc = mighty[0]
             bc = int(bc)
             text = "__Leaving.....__"
-            event = await e.reply(text, parse_mode=None, link_preview=None )
+            event = await e.reply(text)
             try:
                 await event.client(LeaveChannelRequest(bc))
                 await event.edit("Succesfully Left !! ✅")
             except Exception as e:
                 await event.edit(str(e))   
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None )   
+            await e.reply(usage)   
