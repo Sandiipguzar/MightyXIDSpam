@@ -316,7 +316,7 @@ async def _(e):
             text = "De-Activated Reply Raid !! ✅"
             await e.reply(text, parse_mode=None, link_preview=None )
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
+            await e.reply(usage)
     
 
 
