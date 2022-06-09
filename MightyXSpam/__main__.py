@@ -22,7 +22,7 @@ for name in files:
         plugin_name = patt.stem
         load_plugins(plugin_name.replace(".py", ""))
 
-print("Mighty X Spam Successfully Deployed !!")
+print("MightyX ID Spam Successfully Deployed !!")
 print("Enjoy! Do Visit @MightyXSupport")
 
 if len(argv) not in (1, 3, 4):
